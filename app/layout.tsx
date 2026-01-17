@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   title: "Brown Open Silicon | BOS",
   description: "Designing open chips, together. A student-run club at Brown University focused on open-source chip design.",
   keywords: ["Brown University", "Open Silicon", "Chip Design", "VLSI", "Open Source", "BOS"],
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
