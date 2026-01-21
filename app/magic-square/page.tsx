@@ -114,18 +114,11 @@ const MagicSquareScanner = () => {
                 style={{
                   width: `${BLOCK_SIZE}px`,
                   height: `${BLOCK_SIZE}px`,
-                  
-                  // Faint Red
                   backgroundColor: lit ? 'rgba(255, 0, 50, 0.15)' : 'transparent',
-                  
-                  // Blurred Glow
                   boxShadow: lit 
                     ? '0 0 60px 20px rgba(255, 0, 50, 0.3)' 
                     : 'none',
-                  
-                  // Filter Blur
                   filter: lit ? 'blur(4px)' : 'none',
-                  
                   transition: 'all 0.4s ease-out',
                 }}
               />
