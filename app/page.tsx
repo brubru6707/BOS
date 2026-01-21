@@ -14,7 +14,7 @@ export default function Home() {
             {/* Text Content */}
             <div className="space-y-6">
               <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
-                Brown Open <span className="text-brown-red text-shadow-glow">Silicon</span>
+                Brown <span className="text-brown-red text-shadow-glow">Open</span> Silicon
               </h1>
               <p className="text-xl md:text-2xl text-white/80">
                 Designing open chips, together.

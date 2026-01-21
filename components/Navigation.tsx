@@ -26,7 +26,7 @@ export default function Navigation() {
           <Link href="/" className="flex items-center space-x-2">
             <div className="text-brown-red font-bold text-xl">BOS</div>
             <div className="hidden sm:block text-xs text-white/70">
-              Brown Open Silicon
+              Brown <span className="text-brown-red text-shadow-glow">Open</span>  Silicon
             </div>
           </Link>
 
