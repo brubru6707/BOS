@@ -1,6 +1,9 @@
 export default function Head() {
   return (
     <>
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+      </style>
       {/* Primary Meta Tags */}
       <title>Brown Open Silicon | Designing Open Chips. Together.</title>
       <meta 

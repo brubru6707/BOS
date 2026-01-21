@@ -50,7 +50,6 @@ export default function JoinPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Placeholder for form submission
     console.log("Form submitted:", formData);
     alert("Thank you for your interest! We'll be in touch soon.");
   };

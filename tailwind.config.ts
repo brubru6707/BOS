@@ -14,7 +14,7 @@ const config: Config = {
         },
       },
       fontFamily: {
-        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
+        sans: ["Plus Jakarta Sans", "sans-serif"],
       },
       backgroundImage: {
         "grid-pattern": 

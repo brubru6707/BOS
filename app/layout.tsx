@@ -4,12 +4,6 @@ import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
-const spaceMono = Space_Mono({
-  weight: ["400", "700"],
-  subsets: ["latin"],
-  variable: "--font-mono",
-});
-
 export const metadata: Metadata = {
   title: "Brown Open Silicon | BOS",
   description: "Designing open chips, together. A student-run club at Brown University focused on open-source chip design.",
@@ -26,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${spaceMono.variable} font-mono`}>
+      <body>
         <Navigation />
         <main className="min-h-screen">
           {children}

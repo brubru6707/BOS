@@ -11,7 +11,6 @@ function BlocCube() {
   const meshRef = useRef<THREE.Mesh>(null)
   const [isInteracting, setIsInteracting] = useState(false)
 
-  // Auto-rotate when user isn't interacting
   useFrame((state, delta) => {
     if (meshRef.current && !isInteracting) {
       meshRef.current.rotation.y += delta * 0.3
@@ -106,7 +105,6 @@ export default function BlocCubePage() {
             camera={{ position: [8, 8, 8], fov: 75 }}
             shadows
           >
-            {/* Improved lighting setup */}
             <ambientLight intensity={0.8} />
             <directionalLight 
               position={[10, 10, 10]} 
@@ -135,5 +133,4 @@ export default function BlocCubePage() {
   )
 }
 
-// Preload the GLTF model
 useGLTF.preload('/BLOC.glb')

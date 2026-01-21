@@ -4,15 +4,10 @@ import React, { useEffect, useRef, useState } from 'react';
 
 const CPU_PATH = [
   "M 20 20",
-  // Top
   "H 30 L 30 10 L 40 10 L 40 20", "H 50 L 50 10 L 60 10 L 60 20", "H 70 L 70 10 L 80 10 L 80 20", "H 90",
-  // Right
   "V 30 L 100 30 L 100 40 L 90 40", "V 50 L 100 50 L 100 60 L 90 60", "V 70 L 100 70 L 100 80 L 90 80", "V 90",
-  // Bottom
   "H 80 L 80 100 L 70 100 L 70 90", "H 60 L 60 100 L 50 100 L 50 90", "H 40 L 40 100 L 30 100 L 30 90", "H 20",
-  // Left
   "V 80 L 10 80 L 10 70 L 20 70", "V 60 L 10 60 L 10 50 L 20 50", "V 40 L 10 40 L 10 30 L 20 30", "V 20",
-  // Inner Hole
   "M 35 35 V 75 H 75 V 35 Z"
 ].join(" ");
 
