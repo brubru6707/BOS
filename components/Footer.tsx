@@ -9,35 +9,35 @@ export default function Footer() {
           {/* About */}
           <div>
             <h3 className="text-brown-red font-bold text-lg mb-4">
-              Brown Open Silicon
+              brown open silicon
             </h3>
             <p className="text-white/70 text-sm">
-              A student-run club at Brown University dedicated to open-source chip design and VLSI education.
+              a student-run club at brown university dedicated to open-source chip design and vlsi education.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-white font-bold text-lg mb-4">Quick Links</h3>
+            <h3 className="text-white font-bold text-lg mb-4">quick links</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/bloc" className="text-white/70 hover:text-brown-red transition-colors">
-                  BLOC Framework
+                  bloc framework
                 </Link>
               </li>
               <li>
                 <Link href="/team" className="text-white/70 hover:text-brown-red transition-colors">
-                  Our Team
+                  our team
                 </Link>
               </li>
               <li>
                 <Link href="/projects" className="text-white/70 hover:text-brown-red transition-colors">
-                  Projects
+                  projects
                 </Link>
               </li>
               <li>
-                <Link href="/join" className="text-white/70 hover:text-brown-red transition-colors">
-                  Join Us
+                <Link href="/projects" className="text-white/70 hover:text-brown-red transition-colors">
+                  join us
                 </Link>
               </li>
             </ul>
@@ -45,7 +45,7 @@ export default function Footer() {
 
           {/* Connect */}
           <div>
-            <h3 className="text-white font-bold text-lg mb-4">Connect</h3>
+            <h3 className="text-white font-bold text-lg mb-4">connect</h3>
             <div className="flex space-x-4">
               <a
                 href="mailto:contact@brownopenchip.org"
@@ -73,7 +73,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 pt-8 border-t border-white/10 text-center text-white/50 text-sm">
-          <p>&copy; {new Date().getFullYear()} Brown Open Silicon. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} brown open silicon. all rights reserved.</p>
         </div>
       </div>
     </footer>

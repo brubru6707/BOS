@@ -51,8 +51,8 @@ export default function Scene() {
     <div className="w-full h-[500px] md:h-[600px]">
       <Canvas shadows>
         <PerspectiveCamera makeDefault position={[0, 0, 5]} />
-        <ambientLight intensity={0.15} />
-        <directionalLight
+        <ambientLight intensity={1} />
+        {/* <directionalLight
           position={[5, 8, 5]}
           intensity={10}
           castShadow
@@ -62,8 +62,8 @@ export default function Scene() {
           shadow-camera-right={5}
           shadow-camera-top={5}
           shadow-camera-bottom={-5}
-        />
-        <spotLight 
+        /> */}
+        {/* <spotLight 
           position={[10, 10, 10]} 
           angle={0.15} 
           penumbra={1} 
@@ -71,8 +71,8 @@ export default function Scene() {
           castShadow 
           shadow-mapSize-width={2048}
           shadow-mapSize-height={2048}
-        />
-        <pointLight position={[-10, -10, -10]} intensity={0.2} />
+        /> */}
+        {/* <pointLight position={[-10, -10, -10]} intensity={0.2} /> */}
         
         {/* Shadow receiving plane */}
         <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[0, -1, 0]}>

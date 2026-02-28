@@ -6,12 +6,11 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/bloc", label: "BLOC" },
-  { href: "/team", label: "Team" },
-  { href: "/education", label: "Education" },
-  { href: "/projects", label: "Projects" },
-  { href: "/join", label: "Join" },
+  { href: "/", label: "home" },
+  { href: "/bloc", label: "bloc" },
+  { href: "/team", label: "team" },
+  // { href: "/education", label: "Education" },
+  { href: "/projects", label: "projects" },
 ];
 
 export default function Navigation() {
@@ -24,9 +23,9 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="text-brown-red font-bold text-xl">BOS</div>
+            {/* <div className="text-brown-red font-bold text-xl">bos</div> */}
             <div className="hidden sm:block text-xs text-white/70">
-              Brown <span className="text-brown-red text-shadow-glow">Open</span>  Silicon
+              brown <span className="text-brown-red text-shadow-glow">open</span>  silicon
             </div>
           </Link>
 

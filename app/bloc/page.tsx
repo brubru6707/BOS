@@ -52,7 +52,7 @@ export default function BlocPage() {
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-            The <span className="text-brown-red text-shadow-glow">BLOC</span> Framework
+            The <span className="text-brown-red">BLOC</span> Framework
           </h1>
           <p className="text-xl md:text-2xl text-white/70 max-w-3xl mx-auto">
             Our guiding principles: <span className="text-brown-red font-semibold">Build, Learn, Open, Connect</span>

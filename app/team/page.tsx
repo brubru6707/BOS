@@ -41,7 +41,7 @@ export default function TeamPage() {
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-            Meet Our <span className="text-brown-red text-shadow-glow">Team</span>
+            Meet Our <span className="text-brown-red">Team</span>
           </h1>
           <p className="text-xl md:text-2xl text-white/70 max-w-3xl mx-auto">
             Student-run, faculty-mentored. Building the future of open silicon together.
@@ -178,8 +178,8 @@ export default function TeamPage() {
             We're always looking for passionate students interested in chip design and open-source hardware.
           </p>
           <a
-            href="/join"
-            className="inline-flex items-center px-8 py-4 bg-brown-red hover:bg-brown-red/90 text-white font-semibold rounded-lg transition-all border-glow"
+            href="/projects"
+            className="inline-flex items-center px-8 py-4 bg-brown-red hover:bg-brown-red/90 text-white font-semibold rounded-lg transition-all"
           >
             Learn More
           </a>
