@@ -2,44 +2,44 @@ import { Hammer, BookOpen, Unlock, Network } from "lucide-react";
 
 const blocData = [
   {
-    title: "BUILD",
+    title: "build",
     icon: Hammer,
     color: "from-brown-red to-red-600",
     items: [
-      "Tapeout design",
-      "Reproducible VLSI workflows"
+      "tapeout design",
+      "reproducible vlsi workflows"
     ],
-    description: "Focus on practical chip design and manufacturing-ready solutions"
+    description: "focus on practical chip design and manufacturing-ready solutions"
   },
   {
-    title: "LEARN",
+    title: "learn",
     icon: BookOpen,
     color: "from-blue-600 to-blue-400",
     items: [
-      "VLSI and Chip Design",
-      "Project Management Skills"
+      "vlsi and chip design",
+      "project management skills"
     ],
-    description: "Master both technical and collaborative skills"
+    description: "master both technical and collaborative skills"
   },
   {
-    title: "OPEN",
+    title: "open",
     icon: Unlock,
     color: "from-green-600 to-green-400",
     items: [
-      "Open Source Tools for Chip Design",
-      "Open to all students"
+      "open source tools for chip design",
+      "open to all students"
     ],
-    description: "Democratizing chip design through open-source innovation"
+    description: "democratizing chip design through open-source innovation"
   },
   {
-    title: "CONNECT",
+    title: "connect",
     icon: Network,
     color: "from-purple-600 to-purple-400",
     items: [
-      "Industry Leaders",
-      "Leading Researchers"
+      "industry leaders",
+      "leading researchers"
     ],
-    description: "Build relationships with pioneers in the field"
+    description: "build relationships with pioneers in the field"
   }
 ];
 
@@ -52,10 +52,10 @@ export default function BlocPage() {
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-            The <span className="text-brown-red">BLOC</span> Framework
+            the <span className="text-brown-red">bloc</span> framework
           </h1>
           <p className="text-xl md:text-2xl text-white/70 max-w-3xl mx-auto">
-            Our guiding principles: <span className="text-brown-red font-semibold">Build, Learn, Open, Connect</span>
+            our guiding principles: <span className="text-brown-red font-semibold">build, learn, open, connect</span>
           </p>
           <div className="w-24 h-1 bg-brown-red mx-auto mt-8" />
         </div>
@@ -158,16 +158,16 @@ export default function BlocPage() {
       <section className="py-20 border-t border-white/10 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">
-            Framework Overview
+            framework overview
           </h2>
           
           <div className="overflow-x-auto">
             <table className="w-full border-collapse">
               <thead>
                 <tr className="border-b-2 border-brown-red">
-                  <th className="text-left py-4 px-6 text-white font-bold">Pillar</th>
-                  <th className="text-left py-4 px-6 text-white font-bold">Focus Areas</th>
-                  <th className="text-left py-4 px-6 text-white font-bold">Impact</th>
+                  <th className="text-left py-4 px-6 text-white font-bold">pillar</th>
+                  <th className="text-left py-4 px-6 text-white font-bold">focus areas</th>
+                  <th className="text-left py-4 px-6 text-white font-bold">impact</th>
                 </tr>
               </thead>
               <tbody>

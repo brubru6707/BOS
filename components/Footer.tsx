@@ -48,25 +48,18 @@ export default function Footer() {
             <h3 className="text-white font-bold text-lg mb-4">connect</h3>
             <div className="flex space-x-4">
               <a
-                href="mailto:contact@brownopenchip.org"
+                href="mailto:wilson_vo@brown.edu"
                 className="text-white/70 hover:text-brown-red transition-colors"
                 aria-label="Email"
               >
                 <Mail size={24} />
               </a>
               <a
-                href="#"
+                href="https://github.com/brubru6707/BOS"
                 className="text-white/70 hover:text-brown-red transition-colors"
                 aria-label="GitHub"
               >
                 <Github size={24} />
-              </a>
-              <a
-                href="#"
-                className="text-white/70 hover:text-brown-red transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin size={24} />
               </a>
             </div>
           </div>

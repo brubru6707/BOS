@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Cpu, Brain, Zap, Trophy, Boxes, Sparkles, Calendar, Users, Target, Mail, User, MessageSquare } from "lucide-react";
+import { submitInterestForm } from "@/src/lib/firebase";
 
 // Image loading wrapper component
 const ImageWithLoader = ({ src, alt, className = "" }: { src: string, alt: string, className?: string }) => {
@@ -99,6 +100,44 @@ const advancedProjects = [
   }
 ];
 
+const meetings = [
+  {
+    title: "BOS Info Session",
+    date: "December 13, 2025",
+    description: "Information session introducing BOS and chip design opportunities",
+    pdf: "/meetings/BOS Dec 13, 2025 Info Session.pdf",
+    slug: "bos-info-session-dec-13-2025"
+  },
+  {
+    title: "BOS Kickoff Meeting",
+    date: "February 7, 2026",
+    description: "Kickoff meeting for the semester's activities and projects",
+    pdf: "/meetings/BOS February 7th, 2026 Kickoff Meeting.pdf",
+    slug: "bos-kickoff-meeting-feb-7-2026"
+  },
+  {
+    title: "BOS Meeting",
+    date: "February 27, 2026",
+    description: "Regular BOS meeting with project updates and discussions",
+    pdf: "/meetings/BOS February 27th, 2026 Meeting.pdf",
+    slug: "bos-meeting-feb-27-2026"
+  },
+  {
+    title: "BOS Meeting",
+    date: "March 6, 2026",
+    description: "Regular BOS meeting with project updates and discussions",
+    pdf: "/meetings/BOS February March 6th, 2026.pdf",
+    slug: "bos-meeting-mar-6-2026"
+  },
+  {
+    title: "Brown Open Silicon Meeting",
+    date: "March 14, 2026",
+    description: "Brown Open Silicon meeting covering open-source chip design",
+    pdf: "/meetings/Brown Open Silicon March 14, 2026.pdf",
+    slug: "brown-open-silicon-mar-14-2026"
+  }
+];
+
 const competitions = [
   {
     name: "ieee code-a-chip travel grants",
@@ -166,10 +205,54 @@ export default function ProjectsPage() {
     message: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("thank you for your interest! we'll be in touch soon.");
+    
+    // Process interests: split by comma and trim
+    const interestsArray = formData.interests
+      ? formData.interests.split(',').map(i => i.trim()).filter(i => i)
+      : [];
+    
+    // Map year to full description
+    const yearMapping: Record<string, string> = {
+      freshman: "1st year undergraduate",
+      sophomore: "2nd year undergraduate", 
+      junior: "3rd year undergraduate",
+      senior: "4th year undergraduate",
+      graduate: "graduate student"
+    };
+    
+    const submissionData = {
+      name: formData.name,
+      email: formData.email,
+      year: yearMapping[formData.year] || formData.year,
+      interests: interestsArray,
+      message: formData.message,
+      source: "projects_page_form"
+    };
+    
+    try {
+      const result = await submitInterestForm(submissionData);
+      if (result.success) {
+        setShowModal(true);
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          year: "",
+          interests: "",
+          message: ""
+        });
+      } else {
+        alert("there was an error submitting your form. please try again.");
+        console.error("Submission error:", result.error);
+      }
+    } catch (error) {
+      alert("there was an error submitting your form. please try again.");
+      console.error("Submission error:", error);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -341,6 +424,51 @@ export default function ProjectsPage() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Meetings */}
+      <section className="py-20 bg-black border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-white mb-4">meetings</h2>
+            <p className="text-white/70">past meetings and presentations from our community</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {meetings.map((meeting, index) => (
+              <a
+                key={meeting.slug}
+                href={`/meetings/${meeting.slug}`}
+                className="border border-white/10 rounded-xl overflow-hidden hover:border-brown-red/50 transition-all bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm group block"
+              >
+                {/* Meeting Header */}
+                <div className="p-6">
+                  {/* Header */}
+                  <div className="mb-4">
+                    <h4 className="text-xl font-bold text-white group-hover:text-brown-red transition-colors mb-2">
+                      {meeting.title}
+                    </h4>
+                    <span className="px-2 py-0.5 bg-brown-red/20 text-brown-red border border-brown-red/30 rounded text-sm font-semibold">
+                      {meeting.date}
+                    </span>
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-white/70 mb-4 text-sm">
+                    {meeting.description}
+                  </p>
+
+                  {/* View Slides */}
+                  <div className="pt-4 border-t border-white/10">
+                    <span className="text-brown-red hover:text-brown-red/80 text-sm font-semibold transition-colors">
+                      view slides →
+                    </span>
+                  </div>
+                </div>
+              </a>
+            ))}
           </div>
         </div>
       </section>
@@ -634,6 +762,26 @@ export default function ProjectsPage() {
           </div> */}
         </div>
       </section>
+
+      {/* Success Modal */}
+      {showModal && (
+        <div 
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50"
+          onClick={() => setShowModal(false)}
+        >
+          <div 
+            className="bg-black border-2 border-white rounded-xl p-8 max-w-md mx-4 text-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h2 className="text-3xl font-bold text-white mb-4">
+              hello!!
+            </h2>
+            <p className="text-white/80 text-lg">
+              thank you for your interest! we'll be in touch soon :D
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
