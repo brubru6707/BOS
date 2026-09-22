@@ -8,7 +8,13 @@ a Brown student who's never written a line of TypeScript, or someone from the wi
 open-silicon community who just wants to fix a typo — **you're welcome here.** Pull
 requests of every size are appreciated.
 
-🔗 [brubru6707/BOS](https://github.com/brubru6707/BOS)
+[![live site](https://img.shields.io/badge/live-bos--amber.vercel.app-C00404)](https://bos-amber.vercel.app)
+[![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/brubru6707/BOS/pulls)
+[![good first issues](https://img.shields.io/github/issues/brubru6707/BOS/good%20first%20issue?label=good%20first%20issues)](https://github.com/brubru6707/BOS/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
+
+🌐 **[bos-amber.vercel.app](https://bos-amber.vercel.app)** — the live site
+🔗 [brubru6707/BOS](https://github.com/brubru6707/BOS) — the source
 
 ---
 
@@ -105,6 +111,8 @@ Everything about the roster lives in [`src/data/years.ts`](src/data/years.ts). A
 {
   name: "Your Name",
   role: "officer",                      // shown in red under the name
+  // the next three are optional — leave them out and the card just
+  // shows your name, role, photo and linkedin
   title: "3rd year undergraduate",      // class year or position
   credentials: "focus: analog design",  // focus area or accolade
   description: "one-line bio.",
@@ -181,6 +189,17 @@ You don't need to be a BOS member, a Brown student, or a chip designer to contri
 Be kind, be patient, and assume good faith. This is a student club — a lot of people here
 are learning, and "I don't know how this works" is always an acceptable thing to say. We
 don't tolerate harassment or belittling of any kind.
+
+---
+
+## License
+
+[MIT](LICENSE) — use it, fork it, learn from it. If this site is a useful starting point
+for your own club's page, take it and run.
+
+The MIT license covers the **code**. Club content — member photos, meeting slide decks,
+and the BOS name and logo — belongs to Brown Open Silicon and its members, so please
+swap those out rather than shipping them as your own.
 
 ---
 
