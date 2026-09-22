@@ -2,51 +2,15 @@
 
 import { useParams, useRouter } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
+import { getMeeting } from "@/src/data/years";
 
-const meetings = [
-  {
-    title: "BOS Info Session",
-    date: "December 13, 2025",
-    description: "Information session introducing BOS and chip design opportunities",
-    pdf: "/meetings/BOS Dec 13, 2025 Info Session.pdf",
-    slug: "bos-info-session-dec-13-2025"
-  },
-  {
-    title: "BOS Kickoff Meeting",
-    date: "February 7, 2026",
-    description: "Kickoff meeting for the semester's activities and projects",
-    pdf: "/meetings/BOS February 7th, 2026 Kickoff Meeting.pdf",
-    slug: "bos-kickoff-meeting-feb-7-2026"
-  },
-  {
-    title: "BOS Meeting",
-    date: "February 27, 2026",
-    description: "Regular BOS meeting with project updates and discussions",
-    pdf: "/meetings/BOS February 27th, 2026 Meeting.pdf",
-    slug: "bos-meeting-feb-27-2026"
-  },
-  {
-    title: "BOS Meeting",
-    date: "March 6, 2026",
-    description: "Regular BOS meeting with project updates and discussions",
-    pdf: "/meetings/BOS February March 6th, 2026.pdf",
-    slug: "bos-meeting-mar-6-2026"
-  },
-  {
-    title: "Brown Open Silicon Meeting",
-    date: "March 14, 2026",
-    description: "Brown Open Silicon meeting covering open-source chip design",
-    pdf: "/meetings/Brown Open Silicon March 14, 2026.pdf",
-    slug: "brown-open-silicon-mar-14-2026"
-  }
-];
 
 export default function MeetingPage() {
   const params = useParams();
   const router = useRouter();
   const meetingSlug = params.meeting as string;
 
-  const meeting = meetings.find(m => m.slug === meetingSlug);
+  const meeting = getMeeting(meetingSlug);
 
   if (!meeting) {
     return (

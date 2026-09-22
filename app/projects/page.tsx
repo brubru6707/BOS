@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { Cpu, Brain, Zap, Trophy, Boxes, Sparkles, Calendar, Users, Target, Mail, User, MessageSquare } from "lucide-react";
 import { submitInterestForm } from "@/src/lib/firebase";
+import { academicYears } from "@/src/data/years";
 
 // Image loading wrapper component
 const ImageWithLoader = ({ src, alt, className = "" }: { src: string, alt: string, className?: string }) => {
@@ -100,43 +101,6 @@ const advancedProjects = [
   }
 ];
 
-const meetings = [
-  {
-    title: "BOS Info Session",
-    date: "December 13, 2025",
-    description: "Information session introducing BOS and chip design opportunities",
-    pdf: "/meetings/BOS Dec 13, 2025 Info Session.pdf",
-    slug: "bos-info-session-dec-13-2025"
-  },
-  {
-    title: "BOS Kickoff Meeting",
-    date: "February 7, 2026",
-    description: "Kickoff meeting for the semester's activities and projects",
-    pdf: "/meetings/BOS February 7th, 2026 Kickoff Meeting.pdf",
-    slug: "bos-kickoff-meeting-feb-7-2026"
-  },
-  {
-    title: "BOS Meeting",
-    date: "February 27, 2026",
-    description: "Regular BOS meeting with project updates and discussions",
-    pdf: "/meetings/BOS February 27th, 2026 Meeting.pdf",
-    slug: "bos-meeting-feb-27-2026"
-  },
-  {
-    title: "BOS Meeting",
-    date: "March 6, 2026",
-    description: "Regular BOS meeting with project updates and discussions",
-    pdf: "/meetings/BOS February March 6th, 2026.pdf",
-    slug: "bos-meeting-mar-6-2026"
-  },
-  {
-    title: "Brown Open Silicon Meeting",
-    date: "March 14, 2026",
-    description: "Brown Open Silicon meeting covering open-source chip design",
-    pdf: "/meetings/Brown Open Silicon March 14, 2026.pdf",
-    slug: "brown-open-silicon-mar-14-2026"
-  }
-];
 
 const competitions = [
   {
@@ -436,8 +400,23 @@ export default function ProjectsPage() {
             <p className="text-white/70">past meetings and presentations from our community</p>
           </div>
 
+          {academicYears
+            .filter((year) => year.meetings.length > 0)
+            .map((year) => (
+          <div key={year.slug} className="mb-12 last:mb-0">
+            <div className="flex items-center gap-4 mb-6">
+              <h3 className="text-2xl font-bold text-white">{year.label}</h3>
+              <div className="flex-1 h-px bg-white/10" />
+              <a
+                href={`/team/${year.slug}`}
+                className="text-brown-red hover:text-brown-red/80 text-sm font-semibold transition-colors whitespace-nowrap"
+              >
+                {year.label} team →
+              </a>
+            </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {meetings.map((meeting, index) => (
+            {year.meetings.map((meeting) => (
               <a
                 key={meeting.slug}
                 href={`/meetings/${meeting.slug}`}
@@ -470,6 +449,8 @@ export default function ProjectsPage() {
               </a>
             ))}
           </div>
+          </div>
+            ))}
         </div>
       </section>
 

@@ -1,11 +1,13 @@
 import Link from "next/link";
-import { Github, Mail, Linkedin } from "lucide-react";
+import { Github, Mail } from "lucide-react";
+import { academicYears, CURRENT_YEAR } from "@/src/data/years";
+import { teamHref } from "@/components/YearSwitcher";
 
 export default function Footer() {
   return (
     <footer className="border-t border-white/10 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* About */}
           <div>
             <h3 className="text-brown-red font-bold text-lg mb-4">
@@ -40,6 +42,27 @@ export default function Footer() {
                   join us
                 </Link>
               </li>
+            </ul>
+          </div>
+
+          {/* Archive */}
+          <div>
+            <h3 className="text-white font-bold text-lg mb-4">archive</h3>
+            <p className="text-white/50 text-xs mb-3">browse the team by academic year</p>
+            <ul className="space-y-2 text-sm">
+              {academicYears.map((year) => (
+                <li key={year.slug}>
+                  <Link
+                    href={teamHref(year.slug)}
+                    className="text-white/70 hover:text-brown-red transition-colors"
+                  >
+                    {year.label}
+                    {year.slug === CURRENT_YEAR && (
+                      <span className="ml-2 text-xs text-brown-red">current</span>
+                    )}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
