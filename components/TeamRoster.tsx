@@ -10,13 +10,23 @@ function MemberCard({ member }: { member: Member }) {
     <div className="border border-white/10 rounded-xl p-6 hover:border-brown-red/50 transition-all bg-white/5 backdrop-blur-sm group">
       <div className="flex items-start space-x-4 mb-4">
         <div className="w-20 h-20 bg-gradient-to-br from-brown-red/70 to-brown-red/40 rounded-lg flex items-center justify-center text-white text-2xl font-bold flex-shrink-0 group-hover:scale-105 transition-transform overflow-hidden">
-          <Image
-            src={member.image}
-            alt={member.name}
-            width={80}
-            height={80}
-            className="object-cover w-20 h-20 rounded-lg"
-          />
+          {member.image ? (
+            <Image
+              src={member.image}
+              alt={member.name}
+              width={80}
+              height={80}
+              className="object-cover w-20 h-20 rounded-lg"
+            />
+          ) : (
+            <span aria-hidden="true">
+              {member.name
+                .split(" ")
+                .map((part) => part[0])
+                .join("")
+                .slice(0, 2)}
+            </span>
+          )}
         </div>
 
         <div className="flex-1">
@@ -126,13 +136,15 @@ export default function TeamRoster({ year }: { year: AcademicYear }) {
               <div className="border-2 border-brown-red rounded-xl p-8 bg-gradient-to-br from-brown-red/10 to-transparent backdrop-blur-sm">
                 <div className="flex flex-col md:flex-row gap-6">
                   <div className="w-32 h-32 bg-gradient-to-br from-brown-red to-red-800 rounded-xl flex items-center justify-center text-white text-4xl font-bold flex-shrink-0 overflow-hidden">
-                    <Image
-                      src={advisor.image}
-                      alt={advisor.name}
-                      width={128}
-                      height={128}
-                      className="object-cover w-32 h-32 rounded-xl"
-                    />
+                    {advisor.image && (
+                      <Image
+                        src={advisor.image}
+                        alt={advisor.name}
+                        width={128}
+                        height={128}
+                        className="object-cover w-32 h-32 rounded-xl"
+                      />
+                    )}
                   </div>
 
                   <div className="flex-1">

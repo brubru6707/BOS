@@ -30,6 +30,127 @@ const ImageWithLoader = ({ src, alt, className = "" }: { src: string, alt: strin
   );
 };
 
+type Project = {
+  title: string;
+  category: string;
+  description: string;
+  image?: string;
+  tech: string[];
+  status: string;
+  highlights: string[];
+  link?: string;
+};
+
+// from the oct 18, 2026 general meeting slides.
+const currentProjects: Project[] = [
+  {
+    title: "on-chip monitor",
+    category: "introductory project",
+    description: "a one-year project building on-chip sensors that measure temperature, circuit timing and variation, and transistor aging.",
+    tech: ["analog design", "sensing", "tapeout"],
+    status: "active",
+    highlights: [
+      "measurement accuracy",
+      "response time",
+      "power consumption"
+    ]
+  },
+  {
+    title: "8-bit quantized model accelerator",
+    category: "flagship project",
+    description: "a three-year effort to speed up neural network math with an 8-bit inference accelerator, from architecture to silicon.",
+    tech: ["architecture", "rtl", "physical design", "verification", "inference"],
+    status: "active",
+    highlights: [
+      "energy efficiency and latency",
+      "compute throughput and area",
+      "teams for architecture, rtl, verification, physical design, and inference"
+    ]
+  }
+];
+
+const pastProjects: Project[] = [
+  {
+    title: "hungry chippos: 8-bit sar adc",
+    category: "ieee sscs chipathon 2026",
+    description: "a six-person bos team designed an 8-bit successive-approximation adc in gf180mcu end-to-end with open-source tools.",
+    image: "/images/hungry_chippos_sar_adc.png",
+    tech: ["gf180mcu", "xschem", "ngspice", "klayout", "magic"],
+    status: "tapeout-ready",
+    highlights: [
+      "833 ks/s, 7.2 enob (simulated)",
+      "strongarm comparator, 8-bit cap-dac, sar logic",
+      "drc clean, lvs 862/862 netlists match"
+    ],
+    link: "https://github.com/brubru6707/hungry-chippos-chipathon-2026"
+  }
+];
+
+const ProjectCard = ({ project }: { project: Project }) => (
+  <div className="border border-white/10 rounded-xl overflow-hidden hover:border-brown-red/50 transition-all bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm group">
+    {project.image && (
+      <div className="relative w-full h-48 bg-black/50">
+        <ImageWithLoader
+          src={project.image}
+          alt={project.title}
+          className="object-contain p-4"
+        />
+      </div>
+    )}
+
+    <div className="p-6">
+      <div className="mb-4">
+        <div className="flex items-center justify-between mb-2">
+          <h4 className="text-xl font-bold text-white group-hover:text-brown-red transition-colors">
+            {project.title}
+          </h4>
+          <span className="px-2 py-0.5 bg-green-500/20 text-green-400 border border-green-500/30 rounded text-xs font-semibold">
+            {project.status}
+          </span>
+        </div>
+        <span className="px-2 py-0.5 bg-white/10 border border-white/20 rounded text-white/70 text-xs font-semibold">
+          {project.category}
+        </span>
+      </div>
+
+      <p className="text-white/70 mb-4 text-sm">
+        {project.description}
+      </p>
+
+      <div className="space-y-2 mb-4">
+        {project.highlights.map((highlight, idx) => (
+          <div key={idx} className="flex items-center space-x-2 text-sm">
+            <div className="w-1.5 h-1.5 rounded-full bg-brown-red flex-shrink-0" />
+            <span className="text-white/80">{highlight}</span>
+          </div>
+        ))}
+      </div>
+
+      <div className="flex flex-wrap gap-2 pt-4 border-t border-white/10">
+        {project.tech.map((tech, idx) => (
+          <span
+            key={idx}
+            className="px-2 py-1 bg-black/40 border border-white/10 rounded text-white/60 text-xs"
+          >
+            {tech}
+          </span>
+        ))}
+      </div>
+
+      {project.link && (
+        <a
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block mt-4 text-brown-red hover:text-brown-red/80 text-sm font-semibold transition-colors"
+        >
+          view on github →
+        </a>
+      )}
+    </div>
+  </div>
+);
+
 const entryLevelProjects = [
   {
     title: "risc-v soc",
@@ -251,9 +372,29 @@ export default function ProjectsPage() {
             <p className="text-white/70">real technical projects pushing the boundaries of chip design</p>
           </div>
 
+          {/* 2026-2027 Projects */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-brown-red mb-6">2026-2027 projects</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {currentProjects.map((project) => (
+                <ProjectCard key={project.title} project={project} />
+              ))}
+            </div>
+          </div>
+
+          {/* Completed Projects */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-brown-red mb-6">completed projects</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {pastProjects.map((project) => (
+                <ProjectCard key={project.title} project={project} />
+              ))}
+            </div>
+          </div>
+
           {/* Entry-Level Projects */}
           <div className="mb-16">
-            <h3 className="text-2xl font-bold text-brown-red mb-6">entry-level projects</h3>
+            <h3 className="text-2xl font-bold text-brown-red mb-6">2025-2026 entry-level projects</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {entryLevelProjects.map((project, index) => (
                 <div 
@@ -320,7 +461,7 @@ export default function ProjectsPage() {
 
           {/* Advanced Projects */}
           <div>
-            <h3 className="text-2xl font-bold text-brown-red mb-6">advanced projects</h3>
+            <h3 className="text-2xl font-bold text-brown-red mb-6">2025-2026 advanced projects</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {advancedProjects.map((project, index) => (
                 <div 
@@ -610,6 +751,33 @@ export default function ProjectsPage() {
           </div>
         </div>
       </section> */}
+
+      {/* Slack */}
+      <section className="py-20 bg-black border-t border-white/10">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="border border-white/10 rounded-xl p-8 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm flex flex-col md:flex-row items-center gap-8">
+            <div className="bg-white rounded-lg p-2 flex-shrink-0">
+              <Image
+                src="/images/bos_slack_qr.png"
+                alt="qr code to join the bos slack"
+                width={180}
+                height={174}
+              />
+            </div>
+            <div className="text-center md:text-left">
+              <h2 className="text-3xl font-bold text-white mb-3">
+                join our <span className="text-brown-red">slack</span>
+              </h2>
+              <p className="text-white/70 mb-4">
+                scan the qr code with your phone to join the bos slack for announcements, project chats, and tool help.
+              </p>
+              <p className="text-white/50 text-sm">
+                general meetings: sundays 4-5pm, erc 125
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Registration Form */}
       <section id="register" className="py-20 grid-bg border-t border-white/10">

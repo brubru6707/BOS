@@ -24,7 +24,8 @@ export type Member = {
   credentials?: string;
   description?: string;
   group: MemberGroup;
-  image: string;
+  /** headshot in /public; members without one get an initials avatar */
+  image?: string;
   linkedin?: string;
 };
 
@@ -76,10 +77,18 @@ const WILSON: Member = {
   image: "/wilson.png",
 };
 
+// founders move on between years, so the current roster gets updated titles
+// while the 2025-2026 archive keeps the originals above.
+const XINTING_2026: Member = { ...XINTING, title: "2nd year phd student" };
+
+const WILSON_2026: Member = { ...WILSON, title: "brown '26 alum" };
+
+// titles come from the oct 18, 2026 general meeting slides.
 const OFFICERS_2026_2027: Member[] = [
   {
     name: "Emily Zhang",
     role: "officer",
+    title: "2nd year ee undergraduate",
     group: "officer",
     image: "/emily.png",
     linkedin: "https://www.linkedin.com/in/emzhly/",
@@ -88,6 +97,7 @@ const OFFICERS_2026_2027: Member[] = [
   {
     name: "Samuel Song",
     role: "officer",
+    title: "2nd year ee undergraduate",
     group: "officer",
     image: "/samuel.png",
     linkedin: "https://www.linkedin.com/in/samuelsong581/",
@@ -97,6 +107,7 @@ const OFFICERS_2026_2027: Member[] = [
   {
     name: "Exiquio Salinas",
     role: "officer",
+    title: "3rd year ee undergraduate",
     group: "officer",
     image: "/exiquio.png",
     linkedin: "https://www.linkedin.com/in/exiquio-salinas-3b6148279/",
@@ -105,9 +116,27 @@ const OFFICERS_2026_2027: Member[] = [
   {
     name: "Bruno Rodriguez-Mendez",
     role: "officer",
+    title: "2nd year ce undergraduate",
+    credentials: "chipathon 2026 team lead",
     group: "officer",
     image: "/bruno.png",
     linkedin: "https://www.linkedin.com/in/bruno-rodriguez-mendez-18723725b/",
+  },
+  {
+    name: "Luc Bastien",
+    role: "officer",
+    title: "2nd year ee undergraduate",
+    group: "officer",
+  },
+];
+
+const MEETINGS_2026_2027: Meeting[] = [
+  {
+    title: "First General Body Meeting",
+    date: "October 18, 2026",
+    description: "Meet the team, the chip design process, and this year's on-chip monitor and 8-bit accelerator projects",
+    pdf: "/meetings/BOS General Meeting October 18, 2026.pdf",
+    slug: "bos-general-meeting-oct-18-2026",
   },
 ];
 
@@ -155,8 +184,8 @@ export const academicYears: AcademicYear[] = [
     slug: "2026-2027",
     label: "2026-2027",
     blurb: "student-run, faculty-mentored. building the future of open silicon together.",
-    members: [MEHDI, XINTING, WILSON, ...OFFICERS_2026_2027],
-    meetings: [],
+    members: [MEHDI, XINTING_2026, WILSON_2026, ...OFFICERS_2026_2027],
+    meetings: MEETINGS_2026_2027,
   },
   {
     slug: "2025-2026",
