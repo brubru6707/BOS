@@ -12,7 +12,7 @@ export default function Wafer3D({ size = 480 }: { size?: number }) {
     <div
       role="img"
       aria-label="spinning 3d silicon wafer with three highlighted bos project dies"
-      className="relative overflow-hidden"
+      className="relative"
       style={{ width: size, height: size, perspective: 1400 }}
     >
       <div

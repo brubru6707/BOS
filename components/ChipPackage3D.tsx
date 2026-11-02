@@ -14,7 +14,7 @@ export default function ChipPackage3D({ size = 460 }: { size?: number }) {
     <div
       role="img"
       aria-label="spinning 3d chip package with the hungry chippos 8-bit sar adc layout on the die"
-      className="relative overflow-hidden"
+      className="relative"
       style={{ width: size, height: size, perspective: 1400 }}
     >
       <div
@@ -32,7 +32,7 @@ export default function ChipPackage3D({ size = 460 }: { size?: number }) {
           }}
         >
           {/* shadow */}
-          <div className="absolute -inset-6 rounded-3xl bg-black/30 blur-2xl" style={{ transform: "translateZ(-20px)" }} />
+          <div className="absolute inset-2 rounded-3xl bg-black/25 blur-2xl" style={{ transform: "translateZ(-20px)" }} />
 
           {/* body, stacked slices give it thickness */}
           {layers.map((z) => (

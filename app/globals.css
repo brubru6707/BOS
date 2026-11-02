@@ -29,3 +29,14 @@
 @media (prefers-reduced-motion: reduce) {
   .bos-spin { animation: none !important; }
 }
+
+/* 2025-2026 look, served under /classic */
+.classic {
+  font-family: var(--font-jakarta), sans-serif;
+  font-weight: 100;
+}
+.classic .grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+}

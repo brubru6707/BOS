@@ -135,7 +135,7 @@ export default function Home() {
           </div>
 
           <figure className="flex flex-col items-center gap-3">
-            <div className="flex h-[322px] w-full items-center justify-center overflow-hidden sm:h-[460px]">
+            <div className="flex h-[322px] w-full items-center justify-center overflow-x-clip sm:h-[460px]">
               <div className="shrink-0 scale-[0.7] sm:scale-100">
                 <ChipPackage3D />
               </div>
@@ -180,7 +180,7 @@ export default function Home() {
           </div>
 
           <figure className="flex flex-col items-center gap-4">
-            <div className="flex h-[336px] w-full items-center justify-center overflow-hidden sm:h-[480px]">
+            <div className="flex h-[336px] w-full items-center justify-center overflow-x-clip sm:h-[480px]">
               <div className="shrink-0 scale-[0.7] sm:scale-100">
                 <Wafer3D />
               </div>
