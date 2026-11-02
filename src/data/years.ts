@@ -198,6 +198,9 @@ export const academicYears: AcademicYear[] = [
 
 export const CURRENT_YEAR = "2026-2027";
 
+/** the year the 2025-2026 look (/classic) shows. the navbar year switch flips between the two. */
+export const CLASSIC_YEAR = "2025-2026";
+
 export const currentYear: AcademicYear =
   academicYears.find((y) => y.slug === CURRENT_YEAR) ?? academicYears[0];
 

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Github, Mail } from "lucide-react";
 import { academicYears, CURRENT_YEAR } from "@/src/data/years";
-import { teamHref } from "@/components/classic/YearSwitcher";
+import { teamHref } from "@/src/lib/looks";
 
 export default function Footer() {
   return (
@@ -89,6 +89,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 pt-8 border-t border-white/10 text-center text-white/50 text-sm">
+          <p className="mb-2 text-white/70">supported by brown university school of engineering and cadence design systems</p>
           <p>&copy; {new Date().getFullYear()} brown open silicon. all rights reserved.</p>
         </div>
       </div>

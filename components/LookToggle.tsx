@@ -2,21 +2,38 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { isClassic, lookHref } from "@/src/lib/looks";
 
-/** switches between the current look and the 2025-2026 look on the same page. */
-export function lookHref(pathname: string): string {
-  if (pathname === "/classic" || pathname.startsWith("/classic/")) {
-    return pathname.slice("/classic".length) || "/";
-  }
-  return pathname === "/" ? "/classic" : `/classic${pathname}`;
-}
+type Props = {
+  className?: string;
+  activeClassName: string;
+  inactiveClassName: string;
+  onClick?: () => void;
+};
 
-export default function LookToggle({ className, onClick }: { className?: string; onClick?: () => void }) {
+/** navbar year switch: 2025-26 is the original look and team, 2026-27 is the current one. */
+export default function LookToggle({ className, activeClassName, inactiveClassName, onClick }: Props) {
   const pathname = usePathname();
-  const classic = pathname === "/classic" || pathname.startsWith("/classic/");
+  const classic = isClassic(pathname);
+  const other = lookHref(pathname);
+  const years = [
+    { label: "2025–26", active: classic },
+    { label: "2026–27", active: !classic },
+  ];
+
   return (
-    <Link href={lookHref(pathname)} className={className} onClick={onClick}>
-      {classic ? "new look" : "2025–26 look"}
-    </Link>
+    <div className={className} role="group" aria-label="academic year">
+      {years.map((y) =>
+        y.active ? (
+          <span key={y.label} className={activeClassName} aria-current="page">
+            {y.label}
+          </span>
+        ) : (
+          <Link key={y.label} href={other} className={inactiveClassName} onClick={onClick}>
+            {y.label}
+          </Link>
+        )
+      )}
+    </div>
   );
 }

@@ -42,7 +42,11 @@ export default function Navigation() {
                 {link.label}
               </Link>
             ))}
-            <LookToggle className="ml-3 border border-ink px-3 py-1.5 text-ink hover:border-brown-red hover:text-brown-red transition-colors" />
+            <LookToggle
+              className="ml-3 flex border border-ink font-mono text-xs"
+              activeClassName="bg-ink px-2.5 py-2 text-paper"
+              inactiveClassName="px-2.5 py-2 text-ink/70 hover:text-brown-red transition-colors"
+            />
           </div>
 
           {/* Mobile Menu Button */}
@@ -72,7 +76,12 @@ export default function Navigation() {
                 {link.label}
               </Link>
             ))}
-            <LookToggle className="block mx-3 mt-2 w-fit border border-ink px-3 py-1.5 text-ink" onClick={() => setMobileMenuOpen(false)} />
+            <LookToggle
+              className="mx-3 mt-2 flex w-fit border border-ink font-mono text-xs"
+              activeClassName="bg-ink px-2.5 py-2 text-paper"
+              inactiveClassName="px-2.5 py-2 text-ink/70"
+              onClick={() => setMobileMenuOpen(false)}
+            />
           </div>
         )}
       </div>

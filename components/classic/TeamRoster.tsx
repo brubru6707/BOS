@@ -3,7 +3,6 @@ import Link from "next/link";
 import { Award, GraduationCap, Linkedin, User, Users } from "lucide-react";
 import type { AcademicYear, Member } from "@/src/data/years";
 import { isCurrentYear, membersByGroup } from "@/src/data/years";
-import YearSwitcher from "@/components/classic/YearSwitcher";
 
 function MemberCard({ member }: { member: Member }) {
   return (
@@ -86,12 +85,10 @@ export default function TeamRoster({ year }: { year: AcademicYear }) {
           <p className="text-xl md:text-2xl text-white/70 max-w-3xl mx-auto">{year.blurb}</p>
           <div className="w-24 h-1 bg-brown-red mx-auto mt-8 mb-10" />
 
-          <YearSwitcher activeSlug={year.slug} />
-
           {archived && (
             <p className="mt-6 text-white/50 text-sm">
               you&apos;re viewing the {year.label} archive.{" "}
-              <Link href="/classic/team" className="text-brown-red hover:underline">
+              <Link href="/team" className="text-brown-red hover:underline">
                 see the current team →
               </Link>
             </p>

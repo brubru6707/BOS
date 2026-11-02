@@ -306,6 +306,21 @@ export default function Home() {
         </ol>
       </section>
 
+      {/* support */}
+      <section className="border-t border-ink">
+        <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-10 sm:px-6 md:flex-row md:items-center md:gap-12 lg:px-8">
+          <p className="font-mono text-xs uppercase text-ink/60">Supported by</p>
+          <ul className="flex flex-wrap gap-x-12 gap-y-4 font-serif text-2xl font-semibold">
+            <li>
+              <a href="https://engineering.brown.edu" className="hover:text-brown-red">Brown University School of Engineering</a>
+            </li>
+            <li>
+              <a href="https://www.cadence.com" className="hover:text-brown-red">Cadence Design Systems</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
       {/* cta */}
       <section className="bg-brown-red text-white">
         <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-4 py-16 sm:px-6 md:flex-row md:items-center lg:px-8">

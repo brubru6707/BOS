@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Cpu, Brain, Zap, Trophy, Boxes, Sparkles, Calendar, Users, Target, Mail, User, MessageSquare } from "lucide-react";
 import { submitInterestForm } from "@/src/lib/firebase";
 import { academicYears } from "@/src/data/years";
+import { teamHref } from "@/src/lib/looks";
 
 // Image loading wrapper component
 const ImageWithLoader = ({ src, alt, className = "" }: { src: string, alt: string, className?: string }) => {
@@ -549,7 +550,7 @@ export default function ProjectsPage() {
               <h3 className="text-2xl font-bold text-ink">{year.label}</h3>
               <div className="flex-1 h-px bg-white" />
               <a
-                href={`/team/${year.slug}`}
+                href={teamHref(year.slug)}
                 className="text-brown-red hover:text-brown-red/80 text-sm font-semibold transition-colors whitespace-nowrap"
               >
                 {year.label} team →
