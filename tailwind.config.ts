@@ -12,13 +12,16 @@ const config: Config = {
         brown: {
           red: "#C00404",
         },
+        ink: "#141517",
+        paper: "#DCDFE2",
       },
       fontFamily: {
-        sans: ["Plus Jakarta Sans", "sans-serif"],
+        sans: ["var(--font-grotesk)", "sans-serif"],
+        mono: ["var(--font-mono)", "monospace"],
       },
       backgroundImage: {
         "grid-pattern": 
-          "linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px)",
+          "linear-gradient(to right, rgba(20, 21, 23, 0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(20, 21, 23, 0.06) 1px, transparent 1px)",
       },
       backgroundSize: {
         "grid": "50px 50px",

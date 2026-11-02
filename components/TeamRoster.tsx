@@ -7,7 +7,7 @@ import YearSwitcher from "@/components/YearSwitcher";
 
 function MemberCard({ member }: { member: Member }) {
   return (
-    <div className="border border-white/10 rounded-xl p-6 hover:border-brown-red/50 transition-all bg-white/5 backdrop-blur-sm group">
+    <div className="border border-ink/15 rounded-xl p-6 hover:border-brown-red/50 transition-all bg-white group">
       <div className="flex items-start space-x-4 mb-4">
         <div className="w-20 h-20 bg-gradient-to-br from-brown-red/70 to-brown-red/40 rounded-lg flex items-center justify-center text-white text-2xl font-bold flex-shrink-0 group-hover:scale-105 transition-transform overflow-hidden">
           {member.image ? (
@@ -30,14 +30,14 @@ function MemberCard({ member }: { member: Member }) {
         </div>
 
         <div className="flex-1">
-          <h3 className="text-xl font-bold text-white mb-1">{member.name}</h3>
+          <h3 className="text-xl font-bold text-ink mb-1">{member.name}</h3>
           <p className="text-brown-red text-sm font-semibold mb-2">{member.role}</p>
           {member.linkedin && (
             <a
               href={member.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-white/50 hover:text-brown-red transition-colors text-sm"
+              className="inline-flex items-center gap-1.5 text-ink/50 hover:text-brown-red transition-colors text-sm"
               aria-label={`${member.name} on LinkedIn`}
             >
               <Linkedin size={16} />
@@ -50,19 +50,19 @@ function MemberCard({ member }: { member: Member }) {
       {(member.title || member.credentials) && (
         <div className="space-y-2 mb-4">
           {member.title && (
-            <div className="px-3 py-2 bg-black/30 rounded-lg border border-white/5">
-              <p className="text-white/90 text-sm">{member.title}</p>
+            <div className="px-3 py-2 bg-paper/60 rounded-lg border border-ink/15">
+              <p className="text-ink/90 text-sm">{member.title}</p>
             </div>
           )}
           {member.credentials && (
-            <div className="px-3 py-2 bg-black/30 rounded-lg border border-white/5">
-              <p className="text-white/70 text-sm">{member.credentials}</p>
+            <div className="px-3 py-2 bg-paper/60 rounded-lg border border-ink/15">
+              <p className="text-ink/70 text-sm">{member.credentials}</p>
             </div>
           )}
         </div>
       )}
 
-      {member.description && <p className="text-white/60 text-sm">{member.description}</p>}
+      {member.description && <p className="text-ink/60 text-sm">{member.description}</p>}
     </div>
   );
 }
@@ -76,20 +76,20 @@ export default function TeamRoster({ year }: { year: AcademicYear }) {
   return (
     <div className="pt-16 min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 grid-bg border-b border-white/10">
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black pointer-events-none" />
+      <section className="relative py-20 grid-bg border-b border-ink/15">
+        <div className="absolute inset-0 bg-gradient-to-b from-paper via-transparent to-paper pointer-events-none" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+          <h1 className="text-5xl md:text-7xl font-bold text-ink mb-6">
             meet our <span className="text-brown-red">team</span>
           </h1>
-          <p className="text-xl md:text-2xl text-white/70 max-w-3xl mx-auto">{year.blurb}</p>
+          <p className="text-xl md:text-2xl text-ink/70 max-w-3xl mx-auto">{year.blurb}</p>
           <div className="w-24 h-1 bg-brown-red mx-auto mt-8 mb-10" />
 
           <YearSwitcher activeSlug={year.slug} />
 
           {archived && (
-            <p className="mt-6 text-white/50 text-sm">
+            <p className="mt-6 text-ink/50 text-sm">
               you&apos;re viewing the {year.label} archive.{" "}
               <Link href="/team" className="text-brown-red hover:underline">
                 see the current team →
@@ -100,22 +100,22 @@ export default function TeamRoster({ year }: { year: AcademicYear }) {
       </section>
 
       {/* Team Structure Banner */}
-      <section className="py-12 bg-brown-red/10 border-b border-white/10">
+      <section className="py-12 bg-brown-red/10 border-b border-ink/15">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center items-center gap-8 text-center">
             <div className="flex items-center space-x-3">
               <GraduationCap className="text-brown-red" size={32} />
               <div className="text-left">
-                <div className="text-white font-bold text-lg">student-run</div>
-                <div className="text-white/60 text-sm">by students, for students</div>
+                <div className="text-ink font-bold text-lg">student-run</div>
+                <div className="text-ink/60 text-sm">by students, for students</div>
               </div>
             </div>
-            <div className="hidden md:block w-px h-12 bg-white/20" />
+            <div className="hidden md:block w-px h-12 bg-white" />
             <div className="flex items-center space-x-3">
               <Award className="text-brown-red" size={32} />
               <div className="text-left">
-                <div className="text-white font-bold text-lg">faculty-mentored</div>
-                <div className="text-white/60 text-sm">expert guidance and support</div>
+                <div className="text-ink font-bold text-lg">faculty-mentored</div>
+                <div className="text-ink/60 text-sm">expert guidance and support</div>
               </div>
             </div>
           </div>
@@ -123,17 +123,17 @@ export default function TeamRoster({ year }: { year: AcademicYear }) {
       </section>
 
       {/* Team Members */}
-      <section className="py-20 bg-black">
+      <section className="py-20 bg-paper">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Faculty Advisor */}
           {faculty.map((advisor) => (
             <div className="mb-16" key={advisor.name}>
-              <h2 className="text-3xl font-bold text-white mb-8 flex items-center">
+              <h2 className="text-3xl font-bold text-ink mb-8 flex items-center">
                 <Award className="text-brown-red mr-3" size={32} />
                 faculty advisor
               </h2>
 
-              <div className="border-2 border-brown-red rounded-xl p-8 bg-gradient-to-br from-brown-red/10 to-transparent backdrop-blur-sm">
+              <div className="border-2 border-brown-red rounded-xl p-8 bg-gradient-to-br from-brown-red/10 to-transparent ">
                 <div className="flex flex-col md:flex-row gap-6">
                   <div className="w-32 h-32 bg-gradient-to-br from-brown-red to-red-800 rounded-xl flex items-center justify-center text-white text-4xl font-bold flex-shrink-0 overflow-hidden">
                     {advisor.image && (
@@ -148,16 +148,16 @@ export default function TeamRoster({ year }: { year: AcademicYear }) {
                   </div>
 
                   <div className="flex-1">
-                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">{advisor.name}</h3>
+                    <h3 className="text-2xl md:text-3xl font-bold text-ink mb-2">{advisor.name}</h3>
                     <div className="flex flex-wrap gap-2 mb-4">
                       <span className="px-3 py-1 bg-brown-red/20 border border-brown-red rounded-full text-brown-red text-sm font-semibold">
                         {advisor.title}
                       </span>
-                      <span className="px-3 py-1 bg-white/10 border border-white/30 rounded-full text-white/80 text-sm">
+                      <span className="px-3 py-1 bg-white border border-ink/15 rounded-full text-ink/80 text-sm">
                         {advisor.credentials}
                       </span>
                     </div>
-                    <p className="text-white/70 text-lg">{advisor.description}</p>
+                    <p className="text-ink/70 text-lg">{advisor.description}</p>
                   </div>
                 </div>
               </div>
@@ -167,10 +167,10 @@ export default function TeamRoster({ year }: { year: AcademicYear }) {
           {/* Officers */}
           {officers.length > 0 && (
             <div className="mb-16">
-              <h2 className="text-3xl font-bold text-white mb-8 flex items-center">
+              <h2 className="text-3xl font-bold text-ink mb-8 flex items-center">
                 <Users className="text-brown-red mr-3" size={32} />
                 officers
-                <span className="ml-3 text-base font-normal text-white/40">{year.label}</span>
+                <span className="ml-3 text-base font-normal text-ink/40">{year.label}</span>
               </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -184,7 +184,7 @@ export default function TeamRoster({ year }: { year: AcademicYear }) {
           {/* Founding Members */}
           {founding.length > 0 && (
             <div>
-              <h2 className="text-3xl font-bold text-white mb-8 flex items-center">
+              <h2 className="text-3xl font-bold text-ink mb-8 flex items-center">
                 <User className="text-brown-red mr-3" size={32} />
                 founding members
               </h2>
@@ -201,22 +201,22 @@ export default function TeamRoster({ year }: { year: AcademicYear }) {
 
       {/* Meetings archived under this year */}
       {year.meetings.length > 0 && (
-        <section className="py-20 bg-black border-t border-white/10">
+        <section className="py-20 bg-paper border-t border-ink/15">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-white mb-2">{year.label} meetings</h2>
-            <p className="text-white/60 mb-8">slides from every meeting this year.</p>
+            <h2 className="text-3xl font-bold text-ink mb-2">{year.label} meetings</h2>
+            <p className="text-ink/60 mb-8">slides from every meeting this year.</p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {year.meetings.map((meeting) => (
                 <Link
                   key={meeting.slug}
                   href={`/meetings/${meeting.slug}`}
-                  className="border border-white/10 rounded-xl p-5 hover:border-brown-red/50 transition-all bg-white/5 group"
+                  className="border border-ink/15 rounded-xl p-5 hover:border-brown-red/50 transition-all bg-white group"
                 >
-                  <h3 className="text-white font-bold group-hover:text-brown-red transition-colors mb-1">
+                  <h3 className="text-ink font-bold group-hover:text-brown-red transition-colors mb-1">
                     {meeting.title}
                   </h3>
-                  <p className="text-white/50 text-sm">{meeting.date}</p>
+                  <p className="text-ink/50 text-sm">{meeting.date}</p>
                 </Link>
               ))}
             </div>
@@ -225,10 +225,10 @@ export default function TeamRoster({ year }: { year: AcademicYear }) {
       )}
 
       {/* Join CTA */}
-      <section className="py-20 grid-bg border-t border-white/10">
+      <section className="py-20 grid-bg border-t border-ink/15">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">want to join our team?</h2>
-          <p className="text-lg text-white/70 mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4">want to join our team?</h2>
+          <p className="text-lg text-ink/70 mb-8">
             we&apos;re always looking for passionate students interested in chip design and open-source hardware.
           </p>
           <a

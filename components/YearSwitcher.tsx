@@ -9,7 +9,7 @@ export function teamHref(slug: string): string {
 export default function YearSwitcher({ activeSlug }: { activeSlug: string }) {
   return (
     <div className="flex flex-wrap items-center justify-center gap-2">
-      <span className="text-white/40 text-sm mr-2">academic year</span>
+      <span className="text-ink/40 text-sm mr-2">academic year</span>
       {academicYears.map((year) => {
         const isActive = year.slug === activeSlug;
         return (
@@ -20,12 +20,12 @@ export default function YearSwitcher({ activeSlug }: { activeSlug: string }) {
             className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all border ${
               isActive
                 ? "bg-brown-red border-brown-red text-white"
-                : "border-white/15 text-white/60 hover:text-white hover:border-brown-red/50 hover:bg-white/5"
+                : "border-ink/15 text-ink/60 hover:text-ink hover:border-brown-red/50 hover:bg-paper"
             }`}
           >
             {year.label}
             {year.slug === CURRENT_YEAR && (
-              <span className={`ml-2 text-xs ${isActive ? "text-white/70" : "text-white/30"}`}>
+              <span className={`ml-2 text-xs ${isActive ? "text-ink/70" : "text-ink/30"}`}>
                 current
               </span>
             )}

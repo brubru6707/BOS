@@ -14,10 +14,10 @@ export default function MeetingPage() {
 
   if (!meeting) {
     return (
-      <div className="pt-16 min-h-screen bg-black text-white flex items-center justify-center">
+      <div className="pt-16 min-h-screen bg-paper text-ink flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold mb-4">Meeting Not Found</h1>
-          <p className="text-white/70 mb-8">The meeting you're looking for doesn't exist.</p>
+          <p className="text-ink/70 mb-8">The meeting you're looking for doesn't exist.</p>
           <button
             onClick={() => router.push('/projects')}
             className="inline-flex items-center px-6 py-3 bg-brown-red hover:bg-brown-red/90 text-white font-semibold rounded-lg transition-all"
@@ -31,14 +31,14 @@ export default function MeetingPage() {
   }
 
   return (
-    <div className="pt-16 min-h-screen bg-black">
+    <div className="pt-16 min-h-screen bg-paper">
       {/* Header */}
-      <section className="py-8 border-b border-white/10">
+      <section className="py-8 border-b border-ink/15">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-3xl font-bold text-white mb-2">{meeting.title}</h1>
-              <p className="text-white/70">{meeting.date}</p>
+              <h1 className="text-3xl font-bold text-ink mb-2">{meeting.title}</h1>
+              <p className="text-ink/70">{meeting.date}</p>
             </div>
             <button
               onClick={() => router.push('/projects')}
@@ -48,7 +48,7 @@ export default function MeetingPage() {
               Back to Projects
             </button>
           </div>
-          <p className="text-white/70 mt-4">{meeting.description}</p>
+          <p className="text-ink/70 mt-4">{meeting.description}</p>
         </div>
       </section>
 

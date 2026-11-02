@@ -13,9 +13,9 @@ const ImageWithLoader = ({ src, alt, className = "" }: { src: string, alt: strin
   return (
     <div className="relative w-full h-full">
       {isLoading && (
-        <div className="absolute inset-0 flex items-center justify-center bg-black/50">
+        <div className="absolute inset-0 flex items-center justify-center bg-paper/60">
           <div className="relative">
-            <div className="w-12 h-12 border-4 border-white/20 border-t-brown-red rounded-full animate-spin" />
+            <div className="w-12 h-12 border-4 border-ink/15 border-t-brown-red rounded-full animate-spin" />
           </div>
         </div>
       )}
@@ -87,9 +87,9 @@ const pastProjects: Project[] = [
 ];
 
 const ProjectCard = ({ project }: { project: Project }) => (
-  <div className="border border-white/10 rounded-xl overflow-hidden hover:border-brown-red/50 transition-all bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm group">
+  <div className="border border-ink/15 rounded-xl overflow-hidden hover:border-brown-red/50 transition-all bg-gradient-to-br from-white to-transparent group">
     {project.image && (
-      <div className="relative w-full h-48 bg-black/50">
+      <div className="relative w-full h-48 bg-paper/60">
         <ImageWithLoader
           src={project.image}
           alt={project.title}
@@ -101,19 +101,19 @@ const ProjectCard = ({ project }: { project: Project }) => (
     <div className="p-6">
       <div className="mb-4">
         <div className="flex items-center justify-between mb-2">
-          <h4 className="text-xl font-bold text-white group-hover:text-brown-red transition-colors">
+          <h4 className="text-xl font-bold text-ink group-hover:text-brown-red transition-colors">
             {project.title}
           </h4>
-          <span className="px-2 py-0.5 bg-green-500/20 text-green-400 border border-green-500/30 rounded text-xs font-semibold">
+          <span className="px-2 py-0.5 bg-green-500/20 text-green-700 border border-green-500/30 rounded text-xs font-semibold">
             {project.status}
           </span>
         </div>
-        <span className="px-2 py-0.5 bg-white/10 border border-white/20 rounded text-white/70 text-xs font-semibold">
+        <span className="px-2 py-0.5 bg-white border border-ink/15 rounded text-ink/70 text-xs font-semibold">
           {project.category}
         </span>
       </div>
 
-      <p className="text-white/70 mb-4 text-sm">
+      <p className="text-ink/70 mb-4 text-sm">
         {project.description}
       </p>
 
@@ -121,16 +121,16 @@ const ProjectCard = ({ project }: { project: Project }) => (
         {project.highlights.map((highlight, idx) => (
           <div key={idx} className="flex items-center space-x-2 text-sm">
             <div className="w-1.5 h-1.5 rounded-full bg-brown-red flex-shrink-0" />
-            <span className="text-white/80">{highlight}</span>
+            <span className="text-ink/80">{highlight}</span>
           </div>
         ))}
       </div>
 
-      <div className="flex flex-wrap gap-2 pt-4 border-t border-white/10">
+      <div className="flex flex-wrap gap-2 pt-4 border-t border-ink/15">
         {project.tech.map((tech, idx) => (
           <span
             key={idx}
-            className="px-2 py-1 bg-black/40 border border-white/10 rounded text-white/60 text-xs"
+            className="px-2 py-1 bg-paper/60 border border-ink/15 rounded text-ink/60 text-xs"
           >
             {tech}
           </span>
@@ -350,14 +350,14 @@ export default function ProjectsPage() {
   return (
     <div className="pt-16 min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 grid-bg border-b border-white/10">
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black pointer-events-none" />
+      <section className="relative py-20 grid-bg border-b border-ink/15">
+        <div className="absolute inset-0 bg-gradient-to-b from-paper via-transparent to-paper pointer-events-none" />
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+          <h1 className="text-5xl md:text-7xl font-bold text-ink mb-6">
             projects & <span className="text-brown-red">join us</span>
           </h1>
-          <p className="text-xl md:text-2xl text-white/70 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-ink/70 max-w-3xl mx-auto">
             explore our cutting-edge research and become part of brown's open-source chip design community
           </p>
           <div className="w-24 h-1 bg-brown-red mx-auto mt-8" />
@@ -365,11 +365,11 @@ export default function ProjectsPage() {
       </section>
 
       {/* Current Projects */}
-      <section className="py-20 bg-black">
+      <section className="py-20 bg-paper">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-white mb-4">current projects</h2>
-            <p className="text-white/70">real technical projects pushing the boundaries of chip design</p>
+            <h2 className="text-4xl font-bold text-ink mb-4">current projects</h2>
+            <p className="text-ink/70">real technical projects pushing the boundaries of chip design</p>
           </div>
 
           {/* 2026-2027 Projects */}
@@ -399,10 +399,10 @@ export default function ProjectsPage() {
               {entryLevelProjects.map((project, index) => (
                 <div 
                   key={project.title}
-                  className="border border-white/10 rounded-xl overflow-hidden hover:border-brown-red/50 transition-all bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm group"
+                  className="border border-ink/15 rounded-xl overflow-hidden hover:border-brown-red/50 transition-all bg-gradient-to-br from-white to-transparent group"
                 >
                   {/* Project Image */}
-                  <div className="relative w-full h-48 bg-black/50">
+                  <div className="relative w-full h-48 bg-paper/60">
                     <ImageWithLoader
                       src={project.image}
                       alt={project.title}
@@ -415,20 +415,20 @@ export default function ProjectsPage() {
                     {/* Header */}
                     <div className="mb-4">
                       <div className="flex items-center justify-between mb-2">
-                        <h4 className="text-xl font-bold text-white group-hover:text-brown-red transition-colors">
+                        <h4 className="text-xl font-bold text-ink group-hover:text-brown-red transition-colors">
                           {project.title}
                         </h4>
-                        <span className="px-2 py-0.5 bg-green-500/20 text-green-400 border border-green-500/30 rounded text-xs font-semibold">
+                        <span className="px-2 py-0.5 bg-green-500/20 text-green-700 border border-green-500/30 rounded text-xs font-semibold">
                           {project.status}
                         </span>
                       </div>
-                      <span className="px-2 py-0.5 bg-white/10 border border-white/20 rounded text-white/70 text-xs font-semibold">
+                      <span className="px-2 py-0.5 bg-white border border-ink/15 rounded text-ink/70 text-xs font-semibold">
                         {project.category}
                       </span>
                     </div>
 
                     {/* Description */}
-                    <p className="text-white/70 mb-4 text-sm">
+                    <p className="text-ink/70 mb-4 text-sm">
                       {project.description}
                     </p>
 
@@ -437,17 +437,17 @@ export default function ProjectsPage() {
                       {project.highlights.map((highlight, idx) => (
                         <div key={idx} className="flex items-center space-x-2 text-sm">
                           <div className="w-1.5 h-1.5 rounded-full bg-brown-red flex-shrink-0" />
-                          <span className="text-white/80">{highlight}</span>
+                          <span className="text-ink/80">{highlight}</span>
                         </div>
                       ))}
                     </div>
 
                     {/* Tech Stack */}
-                    <div className="flex flex-wrap gap-2 pt-4 border-t border-white/10">
+                    <div className="flex flex-wrap gap-2 pt-4 border-t border-ink/15">
                       {project.tech.map((tech, idx) => (
                         <span 
                           key={idx}
-                          className="px-2 py-1 bg-black/40 border border-white/10 rounded text-white/60 text-xs"
+                          className="px-2 py-1 bg-paper/60 border border-ink/15 rounded text-ink/60 text-xs"
                         >
                           {tech}
                         </span>
@@ -466,10 +466,10 @@ export default function ProjectsPage() {
               {advancedProjects.map((project, index) => (
                 <div 
                   key={project.title}
-                  className="border-2 border-brown-red/50 rounded-xl overflow-hidden hover:border-brown-red transition-all bg-gradient-to-br from-brown-red/10 to-transparent backdrop-blur-sm group"
+                  className="border-2 border-brown-red/50 rounded-xl overflow-hidden hover:border-brown-red transition-all bg-gradient-to-br from-brown-red/10 to-transparent group"
                 >
                   {/* Project Image */}
-                  <div className="relative w-full h-48 bg-black/50">
+                  <div className="relative w-full h-48 bg-paper/60">
                     <ImageWithLoader
                       src={project.image}
                       alt={project.title}
@@ -482,10 +482,10 @@ export default function ProjectsPage() {
                     {/* Header */}
                     <div className="mb-4">
                       <div className="flex items-center justify-between mb-2">
-                        <h4 className="text-xl font-bold text-white group-hover:text-brown-red transition-colors">
+                        <h4 className="text-xl font-bold text-ink group-hover:text-brown-red transition-colors">
                           {project.title}
                         </h4>
-                        <span className="px-2 py-0.5 bg-green-500/20 text-green-400 border border-green-500/30 rounded text-xs font-semibold">
+                        <span className="px-2 py-0.5 bg-green-500/20 text-green-700 border border-green-500/30 rounded text-xs font-semibold">
                           {project.status}
                         </span>
                       </div>
@@ -500,7 +500,7 @@ export default function ProjectsPage() {
                     </div>
 
                     {/* Description */}
-                    <p className="text-white/70 mb-4 text-sm">
+                    <p className="text-ink/70 mb-4 text-sm">
                       {project.description}
                     </p>
 
@@ -509,17 +509,17 @@ export default function ProjectsPage() {
                       {project.highlights.map((highlight, idx) => (
                         <div key={idx} className="flex items-center space-x-2 text-sm">
                           <div className="w-1.5 h-1.5 rounded-full bg-brown-red flex-shrink-0" />
-                          <span className="text-white/80">{highlight}</span>
+                          <span className="text-ink/80">{highlight}</span>
                         </div>
                       ))}
                     </div>
 
                     {/* Tech Stack */}
-                    <div className="flex flex-wrap gap-2 pt-4 border-t border-white/10">
+                    <div className="flex flex-wrap gap-2 pt-4 border-t border-ink/15">
                       {project.tech.map((tech, idx) => (
                         <span 
                           key={idx}
-                          className="px-2 py-1 bg-black/40 border border-white/10 rounded text-white/60 text-xs"
+                          className="px-2 py-1 bg-paper/60 border border-ink/15 rounded text-ink/60 text-xs"
                         >
                           {tech}
                         </span>
@@ -534,11 +534,11 @@ export default function ProjectsPage() {
       </section>
 
       {/* Meetings */}
-      <section className="py-20 bg-black border-t border-white/10">
+      <section className="py-20 bg-paper border-t border-ink/15">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-white mb-4">meetings</h2>
-            <p className="text-white/70">past meetings and presentations from our community</p>
+            <h2 className="text-4xl font-bold text-ink mb-4">meetings</h2>
+            <p className="text-ink/70">past meetings and presentations from our community</p>
           </div>
 
           {academicYears
@@ -546,8 +546,8 @@ export default function ProjectsPage() {
             .map((year) => (
           <div key={year.slug} className="mb-12 last:mb-0">
             <div className="flex items-center gap-4 mb-6">
-              <h3 className="text-2xl font-bold text-white">{year.label}</h3>
-              <div className="flex-1 h-px bg-white/10" />
+              <h3 className="text-2xl font-bold text-ink">{year.label}</h3>
+              <div className="flex-1 h-px bg-white" />
               <a
                 href={`/team/${year.slug}`}
                 className="text-brown-red hover:text-brown-red/80 text-sm font-semibold transition-colors whitespace-nowrap"
@@ -561,13 +561,13 @@ export default function ProjectsPage() {
               <a
                 key={meeting.slug}
                 href={`/meetings/${meeting.slug}`}
-                className="border border-white/10 rounded-xl overflow-hidden hover:border-brown-red/50 transition-all bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm group block"
+                className="border border-ink/15 rounded-xl overflow-hidden hover:border-brown-red/50 transition-all bg-gradient-to-br from-white to-transparent group block"
               >
                 {/* Meeting Header */}
                 <div className="p-6">
                   {/* Header */}
                   <div className="mb-4">
-                    <h4 className="text-xl font-bold text-white group-hover:text-brown-red transition-colors mb-2">
+                    <h4 className="text-xl font-bold text-ink group-hover:text-brown-red transition-colors mb-2">
                       {meeting.title}
                     </h4>
                     <span className="px-2 py-0.5 bg-brown-red/20 text-brown-red border border-brown-red/30 rounded text-sm font-semibold">
@@ -576,12 +576,12 @@ export default function ProjectsPage() {
                   </div>
 
                   {/* Description */}
-                  <p className="text-white/70 mb-4 text-sm">
+                  <p className="text-ink/70 mb-4 text-sm">
                     {meeting.description}
                   </p>
 
                   {/* View Slides */}
-                  <div className="pt-4 border-t border-white/10">
+                  <div className="pt-4 border-t border-ink/15">
                     <span className="text-brown-red hover:text-brown-red/80 text-sm font-semibold transition-colors">
                       view slides →
                     </span>
@@ -596,14 +596,14 @@ export default function ProjectsPage() {
       </section>
 
       {/* Competitions */}
-      {/* <section className="py-20 border-t border-white/10 bg-gradient-to-b from-black to-brown-red/5">
+      {/* <section className="py-20 border-t border-ink/15 bg-gradient-to-b from-paper to-brown-red/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <div className="flex items-center justify-center space-x-3 mb-4">
               <Trophy className="text-brown-red" size={36} />
-              <h2 className="text-4xl font-bold text-white">Competitions & Events</h2>
+              <h2 className="text-4xl font-bold text-ink">Competitions & Events</h2>
             </div>
-            <p className="text-white/70">Participating in prestigious chip design competitions</p>
+            <p className="text-ink/70">Participating in prestigious chip design competitions</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -611,15 +611,15 @@ export default function ProjectsPage() {
               <div 
                 key={comp.name}
                 className={`
-                  border rounded-xl p-6 transition-all backdrop-blur-sm
+                  border rounded-xl p-6 transition-all 
                   ${comp.highlight 
                     ? 'border-brown-red bg-brown-red/10 border-glow' 
-                    : 'border-white/10 bg-white/5 hover:border-white/30'
+                    : 'border-ink/15 bg-white hover:border-ink/15'
                   }
                 `}
               >
                 <div className="flex items-start justify-between mb-3">
-                  <h3 className={`text-lg font-bold ${comp.highlight ? 'text-brown-red' : 'text-white'}`}>
+                  <h3 className={`text-lg font-bold ${comp.highlight ? 'text-brown-red' : 'text-ink'}`}>
                     {comp.name}
                   </h3>
                   {comp.highlight && (
@@ -627,16 +627,16 @@ export default function ProjectsPage() {
                   )}
                 </div>
                 
-                <div className="text-white/50 text-sm mb-2">{comp.years}</div>
+                <div className="text-ink/50 text-sm mb-2">{comp.years}</div>
                 
-                <p className="text-white/70 text-sm mb-4">
+                <p className="text-ink/70 text-sm mb-4">
                   {comp.description}
                 </p>
                 
                 <span className={`inline-block px-3 py-1 rounded text-xs font-semibold ${
                   comp.status === "Upcoming" 
                     ? "bg-brown-red/20 text-brown-red border border-brown-red/30" 
-                    : "bg-blue-500/20 text-blue-400 border border-blue-500/30"
+                    : "bg-blue-500/20 text-blue-700 border border-blue-500/30"
                 }`}>
                   {comp.status}
                 </span>
@@ -647,33 +647,33 @@ export default function ProjectsPage() {
       </section> */}
 
       {/* IEEE Code-a-Chip 2026 */}
-      {/* <section className="py-20 grid-bg border-t border-white/10">
+      {/* <section className="py-20 grid-bg border-t border-ink/15">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="border-2 border-brown-red rounded-2xl p-8 md:p-12 bg-gradient-to-br from-brown-red/10 to-transparent backdrop-blur-sm border-glow">
+          <div className="border-2 border-brown-red rounded-2xl p-8 md:p-12 bg-gradient-to-br from-brown-red/10 to-transparent border-glow">
             <div className="text-center">
               <div className="inline-block px-4 py-2 bg-brown-red rounded-full text-white text-sm font-bold mb-4">
                 UPCOMING GOAL
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4">
                 IEEE Code-a-Chip 2026
               </h2>
-              <p className="text-lg text-white/80 mb-8">
+              <p className="text-lg text-ink/80 mb-8">
                 We're forming a team to compete in IEEE Code-a-Chip 2026, one of the most prestigious 
                 chip design competitions in the world.
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <div className="bg-black/30 rounded-lg p-4 border border-white/10">
+                <div className="bg-paper/60 rounded-lg p-4 border border-ink/15">
                   <div className="text-brown-red font-bold text-2xl mb-1">2026</div>
-                  <div className="text-white/70 text-sm">Competition Year</div>
+                  <div className="text-ink/70 text-sm">Competition Year</div>
                 </div>
-                <div className="bg-black/30 rounded-lg p-4 border border-white/10">
+                <div className="bg-paper/60 rounded-lg p-4 border border-ink/15">
                   <div className="text-brown-red font-bold text-2xl mb-1">Team</div>
-                  <div className="text-white/70 text-sm">Collaborative Effort</div>
+                  <div className="text-ink/70 text-sm">Collaborative Effort</div>
                 </div>
-                <div className="bg-black/30 rounded-lg p-4 border border-white/10">
+                <div className="bg-paper/60 rounded-lg p-4 border border-ink/15">
                   <div className="text-brown-red font-bold text-2xl mb-1">Global</div>
-                  <div className="text-white/70 text-sm">Worldwide Recognition</div>
+                  <div className="text-ink/70 text-sm">Worldwide Recognition</div>
                 </div>
               </div>
 
@@ -689,9 +689,9 @@ export default function ProjectsPage() {
       </section> */}
 
       {/* Why Join BOS */}
-      {/* <section className="py-20 bg-black border-t border-white/10">
+      {/* <section className="py-20 bg-paper border-t border-ink/15">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-white text-center mb-12">
+          <h2 className="text-4xl font-bold text-ink text-center mb-12">
             Why Join BOS?
           </h2>
           
@@ -701,15 +701,15 @@ export default function ProjectsPage() {
               return (
                 <div 
                   key={benefit.title}
-                  className="border border-white/10 rounded-xl p-6 hover:border-brown-red/50 transition-all bg-white/5 backdrop-blur-sm group"
+                  className="border border-ink/15 rounded-xl p-6 hover:border-brown-red/50 transition-all bg-white group"
                 >
                   <div className="w-14 h-14 bg-gradient-to-br from-brown-red to-red-800 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                     <Icon className="text-white" size={28} />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3">
+                  <h3 className="text-xl font-bold text-ink mb-3">
                     {benefit.title}
                   </h3>
-                  <p className="text-white/70">
+                  <p className="text-ink/70">
                     {benefit.description}
                   </p>
                 </div>
@@ -720,12 +720,12 @@ export default function ProjectsPage() {
       </section> */}
 
       {/* What We're Working On */}
-      {/* <section className="py-20 border-t border-white/10 bg-gradient-to-b from-black to-brown-red/5">
+      {/* <section className="py-20 border-t border-ink/15 bg-gradient-to-b from-paper to-brown-red/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-white text-center mb-4">
+          <h2 className="text-4xl font-bold text-ink text-center mb-4">
             What We're Working On
           </h2>
-          <p className="text-white/70 text-center mb-12 max-w-2xl mx-auto">
+          <p className="text-ink/70 text-center mb-12 max-w-2xl mx-auto">
             Join us as we pursue ambitious goals in chip design and education
           </p>
           
@@ -733,17 +733,17 @@ export default function ProjectsPage() {
             {upcomingGoals.map((goal, index) => (
               <div 
                 key={goal.title}
-                className="border border-white/10 rounded-xl p-6 bg-white/5 backdrop-blur-sm hover:border-brown-red/50 transition-all"
+                className="border border-ink/15 rounded-xl p-6 bg-white hover:border-brown-red/50 transition-all"
               >
                 <div className="flex items-start justify-between mb-3">
-                  <h3 className="text-lg font-bold text-white">
+                  <h3 className="text-lg font-bold text-ink">
                     {goal.title}
                   </h3>
                   <span className="px-2 py-1 bg-brown-red/20 border border-brown-red/30 rounded text-brown-red text-xs font-semibold">
                     {goal.status}
                   </span>
                 </div>
-                <p className="text-white/70 text-sm">
+                <p className="text-ink/70 text-sm">
                   {goal.description}
                 </p>
               </div>
@@ -753,9 +753,9 @@ export default function ProjectsPage() {
       </section> */}
 
       {/* Slack */}
-      <section className="py-20 bg-black border-t border-white/10">
+      <section className="py-20 bg-paper border-t border-ink/15">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="border border-white/10 rounded-xl p-8 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm flex flex-col md:flex-row items-center gap-8">
+          <div className="border border-ink/15 rounded-xl p-8 bg-gradient-to-br from-white to-transparent flex flex-col md:flex-row items-center gap-8">
             <div className="bg-white rounded-lg p-2 flex-shrink-0">
               <Image
                 src="/images/bos_slack_qr.png"
@@ -765,13 +765,13 @@ export default function ProjectsPage() {
               />
             </div>
             <div className="text-center md:text-left">
-              <h2 className="text-3xl font-bold text-white mb-3">
+              <h2 className="text-3xl font-bold text-ink mb-3">
                 join our <span className="text-brown-red">slack</span>
               </h2>
-              <p className="text-white/70 mb-4">
+              <p className="text-ink/70 mb-4">
                 scan the qr code with your phone to join the bos slack for announcements, project chats, and tool help.
               </p>
-              <p className="text-white/50 text-sm">
+              <p className="text-ink/50 text-sm">
                 general meetings: sundays 4-5pm, erc 125
               </p>
             </div>
@@ -780,22 +780,22 @@ export default function ProjectsPage() {
       </section>
 
       {/* Registration Form */}
-      <section id="register" className="py-20 grid-bg border-t border-white/10">
+      <section id="register" className="py-20 grid-bg border-t border-ink/15">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-white mb-4">
+            <h2 className="text-4xl font-bold text-ink mb-4">
               register your interest
             </h2>
-            <p className="text-white/70">
+            <p className="text-ink/70">
               fill out the form below and we'll get in touch with you about joining bos
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="border border-white/10 rounded-xl p-8 bg-black/50 backdrop-blur-sm">
+          <form onSubmit={handleSubmit} className="border border-ink/15 rounded-xl p-8 bg-paper/60 ">
             <div className="space-y-6">
               {/* Name */}
               <div>
-                <label htmlFor="name" className="flex items-center space-x-2 text-white font-semibold mb-2">
+                <label htmlFor="name" className="flex items-center space-x-2 text-ink font-semibold mb-2">
                   <User size={18} className="text-brown-red" />
                   <span>full name *</span>
                 </label>
@@ -806,14 +806,14 @@ export default function ProjectsPage() {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/50 focus:border-brown-red focus:outline-none focus:ring-2 focus:ring-brown-red/50 transition-all"
+                  className="w-full px-4 py-3 bg-white border border-ink/15 rounded-lg text-ink placeholder-ink/40 focus:border-brown-red focus:outline-none focus:ring-2 focus:ring-brown-red/50 transition-all"
                   placeholder="john doe"
                 />
               </div>
 
               {/* Email */}
               <div>
-                <label htmlFor="email" className="flex items-center space-x-2 text-white font-semibold mb-2">
+                <label htmlFor="email" className="flex items-center space-x-2 text-ink font-semibold mb-2">
                   <Mail size={18} className="text-brown-red" />
                   <span>email address *</span>
                 </label>
@@ -824,14 +824,14 @@ export default function ProjectsPage() {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/50 focus:border-brown-red focus:outline-none focus:ring-2 focus:ring-brown-red/50 transition-all"
+                  className="w-full px-4 py-3 bg-white border border-ink/15 rounded-lg text-ink placeholder-ink/40 focus:border-brown-red focus:outline-none focus:ring-2 focus:ring-brown-red/50 transition-all"
                   placeholder="john.doe@brown.edu"
                 />
               </div>
 
               {/* Year */}
               <div>
-                <label htmlFor="year" className="flex items-center space-x-2 text-white font-semibold mb-2">
+                <label htmlFor="year" className="flex items-center space-x-2 text-ink font-semibold mb-2">
                   <Calendar size={18} className="text-brown-red" />
                   <span>year *</span>
                 </label>
@@ -841,20 +841,20 @@ export default function ProjectsPage() {
                   required
                   value={formData.year}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white focus:border-brown-red focus:outline-none focus:ring-2 focus:ring-brown-red/50 transition-all"
+                  className="w-full px-4 py-3 bg-white border border-ink/15 rounded-lg text-ink focus:border-brown-red focus:outline-none focus:ring-2 focus:ring-brown-red/50 transition-all"
                 >
-                  <option value="" className="bg-black">select your year</option>
-                  <option value="freshman" className="bg-black">freshman</option>
-                  <option value="sophomore" className="bg-black">sophomore</option>
-                  <option value="junior" className="bg-black">junior</option>
-                  <option value="senior" className="bg-black">senior</option>
-                  <option value="graduate" className="bg-black">graduate student</option>
+                  <option value="" className="bg-paper">select your year</option>
+                  <option value="freshman" className="bg-paper">freshman</option>
+                  <option value="sophomore" className="bg-paper">sophomore</option>
+                  <option value="junior" className="bg-paper">junior</option>
+                  <option value="senior" className="bg-paper">senior</option>
+                  <option value="graduate" className="bg-paper">graduate student</option>
                 </select>
               </div>
 
               {/* Interests */}
               <div>
-                <label htmlFor="interests" className="flex items-center space-x-2 text-white font-semibold mb-2">
+                <label htmlFor="interests" className="flex items-center space-x-2 text-ink font-semibold mb-2">
                   <Target size={18} className="text-brown-red" />
                   <span>areas of interest</span>
                 </label>
@@ -864,14 +864,14 @@ export default function ProjectsPage() {
                   name="interests"
                   value={formData.interests}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/50 focus:border-brown-red focus:outline-none focus:ring-2 focus:ring-brown-red/50 transition-all"
+                  className="w-full px-4 py-3 bg-white border border-ink/15 rounded-lg text-ink placeholder-ink/40 focus:border-brown-red focus:outline-none focus:ring-2 focus:ring-brown-red/50 transition-all"
                   placeholder="e.g., vlsi, ai for chip design, analog circuits"
                 />
               </div>
 
               {/* Message */}
               <div>
-                <label htmlFor="message" className="flex items-center space-x-2 text-white font-semibold mb-2">
+                <label htmlFor="message" className="flex items-center space-x-2 text-ink font-semibold mb-2">
                   <MessageSquare size={18} className="text-brown-red" />
                   <span>tell us about yourself</span>
                 </label>
@@ -881,7 +881,7 @@ export default function ProjectsPage() {
                   rows={4}
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/50 focus:border-brown-red focus:outline-none focus:ring-2 focus:ring-brown-red/50 transition-all resize-none"
+                  className="w-full px-4 py-3 bg-white border border-ink/15 rounded-lg text-ink placeholder-ink/40 focus:border-brown-red focus:outline-none focus:ring-2 focus:ring-brown-red/50 transition-all resize-none"
                   placeholder="why are you interested in bos? any prior experience with chip design?"
                 />
               </div>
@@ -898,7 +898,7 @@ export default function ProjectsPage() {
 
           {/* Contact Info */}
           {/* <div className="mt-12 text-center">
-            <p className="text-white/70 mb-4">
+            <p className="text-ink/70 mb-4">
               Or reach out directly:
             </p>
             <a 
@@ -915,17 +915,17 @@ export default function ProjectsPage() {
       {/* Success Modal */}
       {showModal && (
         <div 
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50"
+          className="fixed inset-0 bg-paper/60 flex items-center justify-center z-50"
           onClick={() => setShowModal(false)}
         >
           <div 
-            className="bg-black border-2 border-white rounded-xl p-8 max-w-md mx-4 text-center"
+            className="bg-paper border-2 border-ink rounded-xl p-8 max-w-md mx-4 text-center"
             onClick={(e) => e.stopPropagation()}
           >
-            <h2 className="text-3xl font-bold text-white mb-4">
+            <h2 className="text-3xl font-bold text-ink mb-4">
               hello!!
             </h2>
-            <p className="text-white/80 text-lg">
+            <p className="text-ink/80 text-lg">
               thank you for your interest! we'll be in touch soon :D
             </p>
           </div>
