@@ -24,12 +24,11 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <span className="font-bold text-ink">brown open silicon</span>
-            <span className="hidden sm:inline font-mono text-xs text-ink/60">BOS · QFN-48</span>
+            <span className="font-serif text-xl font-semibold text-ink">Brown Open Silicon</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-1 font-mono text-sm">
+          <div className="hidden md:flex space-x-1 text-[15px]">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -43,7 +42,7 @@ export default function Navigation() {
                 {link.label}
               </Link>
             ))}
-            <LookToggle className="ml-3 border-2 border-ink rounded-full px-3 py-1.5 text-ink hover:border-brown-red hover:text-brown-red transition-colors" />
+            <LookToggle className="ml-3 border border-ink px-3 py-1.5 text-ink hover:border-brown-red hover:text-brown-red transition-colors" />
           </div>
 
           {/* Mobile Menu Button */}
@@ -58,7 +57,7 @@ export default function Navigation() {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="md:hidden py-4 space-y-2 font-mono text-sm">
+          <div className="md:hidden py-4 space-y-2 text-[15px]">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -73,7 +72,7 @@ export default function Navigation() {
                 {link.label}
               </Link>
             ))}
-            <LookToggle className="block mx-3 mt-2 w-fit border-2 border-ink rounded-full px-3 py-1.5 text-ink" onClick={() => setMobileMenuOpen(false)} />
+            <LookToggle className="block mx-3 mt-2 w-fit border border-ink px-3 py-1.5 text-ink" onClick={() => setMobileMenuOpen(false)} />
           </div>
         )}
       </div>

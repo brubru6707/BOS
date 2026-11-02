@@ -10,8 +10,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* About */}
           <div>
-            <h3 className="text-ink font-bold text-lg mb-4">
-              brown open silicon
+            <h3 className="font-serif text-xl font-semibold text-ink mb-4">
+              Brown Open Silicon
             </h3>
             <p className="text-ink/70 text-sm">
               a student-run club at brown university dedicated to open-source chip design and vlsi education.

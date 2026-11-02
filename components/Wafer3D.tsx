@@ -36,7 +36,7 @@ export default function Wafer3D({ size = 480 }: { size?: number }) {
           <div className="absolute inset-0 overflow-hidden rounded-full bg-[#b9c0c8]" style={{ transform: "translateZ(8px)" }}>
             <div className="absolute inset-3 grid gap-[2px]" style={{ gridTemplateColumns: `repeat(${GRID}, minmax(0, 1fr))` }}>
               {dies.map((i) => (
-                <span key={i} className={PROJECT_DIES.has(i) ? "bg-brown-red" : "bg-[#7a828c]"} />
+                <span key={i} className={PROJECT_DIES.has(i) ? "bg-brown-red" : "bg-slate"} />
               ))}
             </div>
             {/* thin-film shimmer */}

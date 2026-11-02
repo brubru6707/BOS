@@ -3,10 +3,10 @@ import Footer from "@/components/Footer";
 
 export default function SiteLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <>
+    <div className="site">
       <Navigation />
       <main className="min-h-screen">{children}</main>
       <Footer />
-    </>
+    </div>
   );
 }

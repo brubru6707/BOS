@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Space_Grotesk, Space_Mono } from "next/font/google";
+import { Crimson_Pro, IBM_Plex_Mono, Plus_Jakarta_Sans, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 
-const grotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-grotesk" });
+const serif = Crimson_Pro({ subsets: ["latin"], variable: "--font-serif" });
+const sans = Source_Sans_3({ subsets: ["latin"], variable: "--font-sans" });
 const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-jakarta" });
-const mono = Space_Mono({ subsets: ["latin"], weight: ["400", "700"], variable: "--font-mono" });
+const mono = IBM_Plex_Mono({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-mono" });
 
 export const metadata: Metadata = {
   title: "Brown Open Silicon | BOS",
@@ -21,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`scroll-smooth ${grotesk.variable} ${mono.variable} ${jakarta.variable}`}>
+    <html lang="en" className={`scroll-smooth ${serif.variable} ${sans.variable} ${mono.variable} ${jakarta.variable}`}>
       <body>{children}</body>
     </html>
   );
